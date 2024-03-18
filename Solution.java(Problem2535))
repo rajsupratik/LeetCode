@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+class Solution {
+    public int differenceOfSum(int[] nums) {
+        String concatenate = "";
+        int sum = 0;
+        for (int num : nums) {
+            concatenate += Integer.toString(num);
+            sum += num;
+        }
+        int stringSum = 0;
+        for (char c : concatenate.toCharArray()) {
+            stringSum += Character.getNumericValue(c);
+        }
+        return Math.abs(sum - stringSum);
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        String[] numsStr = input.split(" ");
+        sc.close();
+
+        int[] nums = new int[numsStr.length];
+        for (int i = 0; i < numsStr.length; i++) {
+            nums[i] = Integer.parseInt(numsStr[i]);
+        }
+
+        int result = new Solution().differenceOfSum(nums);
+        System.out.println(result);
+    }
+}
