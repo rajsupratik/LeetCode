@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class TrailingZeroes {
+class TrailingXZeroes {
   public String removeTrailingZeros(String num) {
     int index  = num.length() - 1;
         for(int i = index; i>=0; i--){
